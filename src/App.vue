@@ -2,6 +2,7 @@
 import { defineAsyncComponent, ref } from 'vue';
 import NavComponent from '@/components/NavComponent.vue';
 import HeaderComponent from './components/HeaderComponent.vue';
+import ServicesComponent from './components/ServicesComponent.vue';
 
 
 const project = ref(import.meta.env.VITE_APP_TITLE);
@@ -30,6 +31,7 @@ const getIpFromChild = (value: string) => {
     <ApiComponent @update-ip="getIpFromChild"/>
     <NavComponent :project="project" :nav-items="navItems"/>
     <HeaderComponent :ip="ip"/>
+    <ServicesComponent/>
   </div>
 </template>
 
