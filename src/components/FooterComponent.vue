@@ -37,7 +37,7 @@ const socialLinks = ref([
             </li>
           </ul>
         </div>
-        <div>
+        <div id="contact">
           <h4 class="text-lg font-semibold mb-4">Contact</h4>
           <p class="text-gray-400">Email: info@{{ project.toLowerCase() }}.com</p>
           <p class="text-gray-400">Phone: +1 (432) 123-4567</p>
