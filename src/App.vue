@@ -1,8 +1,11 @@
 <script setup lang="ts">
 import { defineAsyncComponent, ref } from 'vue';
 import NavComponent from '@/components/NavComponent.vue';
-import HeaderComponent from './components/HeaderComponent.vue';
-import ServicesComponent from './components/ServicesComponent.vue';
+import HeaderComponent from '@/components/HeaderComponent.vue';
+import ServicesComponent from '@/components/ServicesComponent.vue';
+import ProductComponent from '@/components/ProductComponent.vue';
+import BrandComponent from '@/components/BrandComponent.vue';
+import FooterComponent from '@/components/FooterComponent.vue';
 
 
 const project = ref(import.meta.env.VITE_APP_TITLE);
@@ -32,6 +35,9 @@ const getIpFromChild = (value: string) => {
     <NavComponent :project="project" :nav-items="navItems"/>
     <HeaderComponent :ip="ip"/>
     <ServicesComponent/>
+    <ProductComponent/>
+    <BrandComponent/>
+    <FooterComponent :project="project" :nav-items="navItems"/>
   </div>
 </template>
 
