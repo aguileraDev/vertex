@@ -19,7 +19,7 @@ const props = defineProps({
     <nav class="bg-white shadow-sm">
         <div class="container mx-auto p-4 flex justify-between items-center">
             <a href="#" class="text-2xl font-bold text-blue-600">{{ project.toUpperCase() }}</a>
-            <div class="space-x-4">
+            <div class="flex space-x-2 mx-1 lg:space-x-4">
                 <a v-for="item in navItems" :key="item.href" :href="item.href"
                     class="text-gray-600 hover:text-blue-600 transition-colors">{{ item.text }}</a>
             </div>

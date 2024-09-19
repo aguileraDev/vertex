@@ -1,6 +1,8 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { defineAsyncComponent, ref } from 'vue';
 import NavComponent from '@/components/NavComponent.vue';
+import HeaderComponent from './components/HeaderComponent.vue';
+
 
 const project = ref(import.meta.env.VITE_APP_TITLE);
 
@@ -11,10 +13,24 @@ const navItems = ref([
 { text: 'Contact', href: '#contact' }
 ])
 
+const ApiComponent = defineAsyncComponent({
+  loader:()=> import("@/components/ApiComponent.vue")
+});
+
+const ip = ref("");
+
+const getIpFromChild = (value: string) => {
+  ip.value = value;
+};
+
 </script>
 
 <template>
-  <NavComponent :project="project" :nav-items="navItems"/>
+  <div class="min-h-screen">
+    <ApiComponent @update-ip="getIpFromChild"/>
+    <NavComponent :project="project" :nav-items="navItems"/>
+    <HeaderComponent :ip="ip"/>
+  </div>
 </template>
 
 <style scoped>
