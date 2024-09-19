@@ -72,6 +72,7 @@ img{
     justify-content: center;
     text-align: center;
     width: 30px;
+    max-width: 30px;
     padding: .4rem;
 }
 
